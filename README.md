@@ -1,2 +1,2 @@
 # SSO
-first commit
+a SSO project base kisso
