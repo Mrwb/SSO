@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+<meta http-equiv="X-UA-Compatible" content="IE=9" />
+<meta charset="utf-8">
+<title>Noitom单点登录系统</title>
+<!-- Style Sheets -->
+<link rel="stylesheet" href="/static/css/css.css">
+
+</head>
+
+<body>
+<div class="full-page">
+  <div class="user-box">
+    <div class="user-box-center">
+  <img src="/static/images/noitom.png" class="loginAlice-a" style="width:auto;float:left;">
+      <form id="form-login" method="post" action="/login" class="r">
+	      <div class="user-groups">
+	      	<div class="inp-group group-logo">
+	      		<img src="/static/images/oa.png" alt="" style="width: auto;">
+	      	</div>
+	      	<div class="error"></div>
+	      	<div class="inp-group">
+	          <span class="inp-span">
+	            <em class="user-ico"></em><input class="inp-style" name="username" type="text" placeholder="输入用户名">
+	          </span>
+	        </div>
+	        <div class="inp-group">
+	          <span class="inp-span">
+	            <em class="lock-close"></em><input class="inp-style" name="password" type="password" placeholder="输入密码">
+	          </span>
+	        </div>
+	<!--        <div class="inp-group">
+	        	<label style=" font-size: 12px;"><input style=" float: left; color: #999999; margin-top: 8px; margin-right: 6px;" name="" type="checkbox" value="">记住用户名</label>
+	        </div>-->
+	        <button id="sure_button" type="submit" class="sure_btn" style="opacity: 1;  float: none;width: 100%;">登&nbsp;&nbsp;&nbsp;&nbsp;录</button>
+	      	$!{MSG_ACCOUNT_LOGIN_FAIL}
+	      </div>
+	      <input type="hidden" name="refer" value="site/">
+	      <input type="hidden" name="ReturnURL" value="$!{ReturnURL}">
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- footer -->
+<div class="footer">
+  <span>Copyright © 2015-2016 Noitom Ltd. Perception Neuron is a registered trademark of Noitom Ltd.</span>
+</div>
+
+<!-- footer end-->
+
+
+<!-- JavaScripts -->
+<script src="/static/js/jquery-1.11.1.min.js"></script>
+
+<script src="/static/js/mine.js"></script>
+</body>
+</html>
