@@ -26,8 +26,8 @@ import com.baomidou.kisso.SSOToken;
  * <p>
  * </p>
  * 
- * @author hubin
- * @date 2015年3月25日
+ * @author 王博
+ * @date 2017年3月25日
  * @version 1.0.0
  */
 @Controller
