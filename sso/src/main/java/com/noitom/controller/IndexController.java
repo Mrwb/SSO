@@ -33,7 +33,7 @@ import com.baomidou.kisso.SSOToken;
 @Controller
 public class IndexController extends BaseController {
 
-	@RequestMapping("/index")
+/*	@RequestMapping("/index")
 	public String index(Model model) {
 		SSOToken st = SSOHelper.getToken(request);
 		if (st == null) {
@@ -49,5 +49,5 @@ public class IndexController extends BaseController {
 
 		return "index";
 	}
-
+*/
 }
