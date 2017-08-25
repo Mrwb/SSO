@@ -8,6 +8,7 @@ PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"
 	<resultMap id="userResultMap" type="com.noitom.model.User">
 		<id property="id" column="id" jdbcType="BIGINT"/>
     	<result property="accountName" column="account_name" jdbcType="VARCHAR"/>
+    	<result property="email" column="email" jdbcType="VARCHAR"/>
     	<result property="password" column="password" jdbcType="VARCHAR"/>
     	<result property="oldPassword" column="password" jdbcType="VARCHAR"/>
     	<result property="enable" column="enable" jdbcType="BIT"/>
@@ -77,6 +78,9 @@ PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"
 	     	<if test="accountName != null" >
 		    account_name,
 		  	</if>
+		  	<if test="email != null" >
+		    email,
+		  	</if>
 	     	<if test="password != null" >
 		    password,
 		  	</if>
@@ -93,6 +97,9 @@ PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"
 		  	</if>
 	     	<if test="accountName != null" >
 		    #{accountName,jdbcType=VARCHAR},
+		  	</if>
+		  	<if test="email != null" >
+		    #{email,jdbcType=VARCHAR},
 		  	</if>
 	     	<if test="password != null" >
 		    AES_ENCRYPT(#{password,jdbcType=VARCHAR},'Rm6XbB81lGwmXcGqs3'),
@@ -123,6 +130,23 @@ PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"
 	<update id="updateStateById"  parameterType="com.noitom.model.User">
 		update user
 		<set>
+			<if test="enable != null" >
+			 enable = #{enable,jdbcType=BIT},
+			</if>
+		</set>
+		where
+			id = #{id,jdbcType=BIGINT}
+	</update>
+		<!-- 根据ID进行更新用户信息 -->
+	<update id="updateUserById"  parameterType="com.noitom.model.User">
+		update user
+		<set>
+			<if test="accountName != null" >
+			 account_name = #{accountName,jdbcType=VARCHAR},
+			</if>
+			<if test="email != null" >
+			 email = #{email,jdbcType=VARCHAR},
+			</if>
 			<if test="enable != null" >
 			 enable = #{enable,jdbcType=BIT},
 			</if>

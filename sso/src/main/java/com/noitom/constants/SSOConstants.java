@@ -25,5 +25,7 @@ public interface SSOConstants {
 	final static String USER_CHANGE_PASSWORD_FAIL="用户原密码错误";
 	final static String USER_CHANGE_STATE_SUCCESS="用户状态修改成功";
 	final static String USER_CHANGE_STATE_FAIL="用户状态修改失败";
+	final static String USER_CHANGE_USERINFO_SUCCESS="用户信息修改成功";
+	final static String USER_CHANGE_USERINFO_FAIL="用户信息修改失败";
 	
 }

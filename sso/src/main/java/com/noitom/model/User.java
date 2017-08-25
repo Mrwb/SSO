@@ -10,6 +10,8 @@ public class User implements Serializable {
 	private Long id;
 	//用户名
 	private String accountName;
+	//邮箱地址
+	private String email;
 	//旧密码
 	private String oldPassword;
 	//密码
@@ -18,24 +20,25 @@ public class User implements Serializable {
 	private Boolean enable;
 	//创建时间
 	private Timestamp createTime;
-	
 
 	public User(){
 	}
-	
-
 
 	public String getOldPassword() {
 		return oldPassword;
 	}
 
-
-
 	public void setOldPassword(String oldPassword) {
 		this.oldPassword = oldPassword;
 	}
 
+	public String getEmail() {
+		return email;
+	}
 
+	public void setEmail(String email) {
+		this.email = email;
+	}
 
 	public void setId(Long id) {
 		this.id = id;

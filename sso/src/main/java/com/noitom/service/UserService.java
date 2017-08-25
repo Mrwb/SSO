@@ -54,6 +54,10 @@ public class UserService  {
 	public void updateState(User user) {
 		dao.updateObj("UserMapper.updateStateById", user);
 	}
+	
+	public void updateUserById(User user) {
+		dao.updateObj("UserMapper.updateUserById", user);
+	}
 
 
 	public User findOneUserById(User user) {

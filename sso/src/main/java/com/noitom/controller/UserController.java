@@ -155,4 +155,34 @@ public class UserController extends BaseController {
 		}
 		return JSON.toJSONString(json);
 	}
+	
+	@RequestMapping(value="/changeUserInfo",method=RequestMethod.POST,produces="text/html;charset=UTF-8")
+	@ResponseBody
+	public String changeUserInfo(String jsonData) {
+		Json json = new Json();
+		if(jsonData!=null){
+			String userJson;
+			try {
+				userJson = RSAUtil.decryptByPrivateKey(jsonData);
+				if(JsonValidator.validate(userJson)){
+					User user = new User();
+					user = JSON.parseObject(userJson, User.class);
+						try {
+							userService.updateUserById(user);
+							json.setSuccess(true);
+							json.setMessage(SSOConstants.USER_CHANGE_USERINFO_SUCCESS);
+							json.setCode(SSOConstants.CODE_GENERAL_SUCCESS);
+						} catch (Exception e) {
+							e.printStackTrace();
+							json.setSuccess(false);
+							json.setMessage(SSOConstants.USER_CHANGE_USERINFO_FAIL);
+							json.setCode(SSOConstants.CODE_GENERAL_FAIL);
+						}
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		return JSON.toJSONString(json);
+	}
 }
