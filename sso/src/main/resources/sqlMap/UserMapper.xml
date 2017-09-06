@@ -57,14 +57,14 @@ PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"
 	    FROM user 
 	    ]]>
         <where>	  
-        	1=1 
-		       <if test="accountName != null">
-					AND account_name = #{accountName,jdbcType=VARCHAR} or email = #{accountName,jdbcType=VARCHAR}
-			   </if>
-		       <if test="password != null">
+        	1=1 		       
+        	<if test="password != null">
 					AND password = AES_ENCRYPT(#{password,jdbcType=VARCHAR},'Rm6XbB81lGwmXcGqs3')
 			   </if>
 					AND enable = 1
+		       <if test="accountName != null">
+					AND account_name = #{accountName,jdbcType=VARCHAR} or email = #{accountName,jdbcType=VARCHAR}
+			   </if>
 		</where>
 		LIMIT 1
 	</select>
