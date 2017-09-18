@@ -4,10 +4,10 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
 <meta http-equiv="X-UA-Compatible" content="IE=9" />
 <meta charset="utf-8">
-<title>Noitom单点登录系统</title>
+<title>Noitom Passport系统</title>
 <!-- Style Sheets -->
 <link rel="stylesheet" href="/static/css/css.css">
-
+<meta name="renderer" content="webkit"> 
 </head>
 
 <body>
